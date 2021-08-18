@@ -8,7 +8,7 @@ incrementBtn.addEventListener('click', increment);
 const eventsCount = {
   count: 0,
   dec() {
-    this.count += 1;
+    this.count -= 1;
   },
   inc() {
     this.count += 1;

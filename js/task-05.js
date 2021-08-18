@@ -18,3 +18,5 @@ function changeNameFn() {
     userName.textContent = 'незнакомец';
   }
 }
+
+// currentTarget.value

@@ -1,26 +1,30 @@
-const decrementBtn = document.querySelector('button[data-action="decrement"]');
-const incrementBtn = document.querySelector('button[data-action="increment"]');
-const counterValue = document.querySelector('#value');
+// Счетчик состоит из спана и кнопок, которые должны увеличивать и
+// уменьшать значение счетчика на 1.
 
-decrementBtn.addEventListener('click', decrement);
-incrementBtn.addEventListener('click', increment);
+// Создай переменную counterValue в которой будет хранится
+// текущее значение счетчика.
+// Создай функции increment и decrement для увеличения и
+// уменьшения значения счетчика
+// Добавь слушатели кликов на кнопки, вызовы функций и обновление
+// интерфейса
 
-const eventsCount = {
-  count: 0,
-  dec() {
-    this.count -= 1;
-  },
-  inc() {
-    this.count += 1;
-  },
+const refs = {
+  decrementBtn: document.querySelector('button[data-action="decrement"]'),
+  incrementBtn: document.querySelector('button[data-action="increment"]'),
+  counterValue: document.querySelector('#value'),
 };
 
-function decrement() {
-  eventsCount.dec();
-  counterValue.textContent = eventsCount.count;
+refs.decrementBtn.addEventListener('click', onDecrement);
+refs.incrementBtn.addEventListener('click', onIncrement);
+
+let count = 0;
+
+function onDecrement() {
+  count -= 1;
+  refs.counterValue.textContent = count;
 }
 
-function increment() {
-  eventsCount.inc();
-  counterValue.textContent = eventsCount.count;
+function onIncrement() {
+  count += 1;
+  refs.counterValue.textContent = count;
 }

@@ -10,7 +10,7 @@ const changeInputRef = document.querySelector('#font-size-control');
 changeInputRef.addEventListener('input', changeHandler);
 
 function changeHandler() {
-  if (changeInputRef.value > 0) {
+  if (changeInputRef.value) {
     console.log(Number(changeInputRef.value));
     changeTextRef.style.fontSize = `${Number(changeInputRef.value)}px`;
   }

@@ -18,10 +18,13 @@ inputRef.addEventListener('blur', checkFn);
 
 function checkFn(e) {
   if (e.target.value.length === Number(e.target.dataset.length)) {
-    e.target.classList.add('valid');
-    e.target.classList.remove('invalid');
+    updateClass('valid', 'invalid');
     return;
   }
-  e.target.classList.remove('valid');
-  e.target.classList.add('invalid');
+  updateClass('invalid', 'valid');
+}
+
+function updateClass(addCl, remCl) {
+  inputRef.classList.add(addCl);
+  inputRef.classList.remove(remCl);
 }

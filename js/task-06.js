@@ -15,13 +15,13 @@
 
 const inputRef = document.querySelector('#validation-input');
 inputRef.addEventListener('blur', checkFn);
-// console.log(inputRef.dataset.length);
 
-function checkFn() {
-  if (inputRef.value.length >= inputRef.dataset.length) {
-    console.log(inputRef.value.length);
-    inputRef.classList.add('valid');
-  } else {
-    inputRef.classList.add('invalid');
+function checkFn(e) {
+  if (e.target.value.length === Number(e.target.dataset.length)) {
+    e.target.classList.add('valid');
+    e.target.classList.remove('invalid');
+    return;
   }
+  e.target.classList.remove('valid');
+  e.target.classList.add('invalid');
 }

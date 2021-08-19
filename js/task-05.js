@@ -11,12 +11,12 @@ console.log(userName);
 
 inputForm.addEventListener('input', changeNameFn);
 
-function changeNameFn() {
-  if (inputForm.value !== '') {
-    userName.textContent = inputForm.value;
-  } else {
-    userName.textContent = 'незнакомец';
+function changeNameFn({ target }) {
+  if (target.value !== '') {
+    userName.textContent = target.value;
+    return;
   }
+  userName.textContent = 'незнакомец';
 }
 
 // currentTarget.value
